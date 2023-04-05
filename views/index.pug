@@ -4,4 +4,14 @@ block content
   h1= title
   p Welcome to #{title}
   p This is lab 10
-  button(type="button", class="btn btn-secondary") Press Me
+  button(type="button", onclick="doReduce()" class="btn btn-secondary") Press Me
+  #reduce Reduce the value
+  script.
+    var count = 20
+    var change = -1
+    function doReduce(){
+      count = count + change
+      change = change -1
+      let resultdiv = document.getElementById('reduce')
+      resultdiv.innerHTML=`Count ${count} with bump ${change}`
+    }

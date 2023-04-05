@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - var giraffe=[{giraffe_name:"masai",giraffe_color:"light tan",giraffe_weight:3600},{giraffe_name:"nubian",giraffe_color:"black",giraffe_weight:4000},{giraffe_name:"cape",giraffe_color:"yellow",giraffe_weight:4200}]
+  div(class="container-fluid")
+  div(class="row")
+   each g,index  in giraffe
+    div(class="col-sm-2" onclick =`buy(${index})`) #{g.giraffe_name}, #{g.giraffe_color}, #{g.giraffe_weight}
+    script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        } 
